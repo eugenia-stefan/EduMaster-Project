@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>EduMaster - Platformă de cursuri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Platformă simplă de cursuri online - proiect pentru master.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">Edu<span>Master</span></div>
+        <nav class="main-nav">
+            <a href="#acasa">Acasă</a>
+            <a href="#cursuri">Cursuri</a>
+            <a href="#despre">Despre</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section id="acasa" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>Platformă de cursuri pentru dezvoltare profesională</h1>
+                <p>EduMaster este o platformă demonstrativă creată ca proiect pentru programul de master. Aici găsești cursuri structurate pe domenii și niveluri.</p>
+                <a href="#cursuri" class="btn-primary">Vezi cursurile</a>
+            </div>
+            <div class="hero-side">
+                <div class="stat-card">
+                    <h2>12+</h2>
+                    <p>Cursuri disponibile</p>
+                </div>
+                <div class="stat-card">
+                    <h2>3 niveluri</h2>
+                    <p>Începător, Mediu, Avansat</p>
+                </div>
+                <div class="stat-card">
+                    <h2>100%</h2>
+                    <p>Proiect educațional demonstrativ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cursuri" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cursuri disponibile</h2>
+                <p>Alege cursul potrivit în funcție de domeniu și nivel.</p>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="categoryFilter">Domeniu</label>
+                    <select id="categoryFilter">
+                        <option value="toate">Toate</option>
+                        <option value="management">Management</option>
+                        <option value="it">IT &amp; Programare</option>
+                        <option value="soft-skills">Soft Skills</option>
+                        <option value="finante">Finanțe &amp; Business</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="levelFilter">Nivel</label>
+                    <select id="levelFilter">
+                        <option value="toate">Toate</option>
+                        <option value="incepator">Începător</option>
+                        <option value="mediu">Mediu</option>
+                        <option value="avansat">Avansat</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="searchInput">Caută</label>
+                    <input type="text" id="searchInput" placeholder="Caută după titlu sau cuvinte cheie...">
+                </div>
+            </div>
+
+            <div id="coursesContainer" class="courses-grid">
+                <!-- Cursurile vor fi generate din JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="despre" class="section section-alt">
+        <div class="container about-grid">
+            <div>
+                <h2>Despre platformă</h2>
+                <p>EduMaster este o platformă fictivă de e-learning, creată pentru a demonstra concepte de management al proiectelor și organizare a muncii în echipă.</p>
+                <p>Structura site-ului a fost gândită astfel încât să fie ușor de extins: se pot adăuga rapid noi cursuri, noi categorii și pagini suplimentare.</p>
+            </div>
+            <div>
+                <h3>Cum poate fi prezentat la cursul de managementul proiectelor</h3>
+                <ul class="checklist">
+                    <li>Definirea obiectivelor proiectului (scopul platformei, public țintă)</li>
+                    <li>Planificarea activităților pe etape (analiză, design, implementare, testare)</li>
+                    <li>Împărțirea sarcinilor pe roluri (coordonator, developer, content writer etc.)</li>
+                    <li>Utilizarea unor instrumente de lucru colaborativ (ex: Trello, Google Docs)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container contact-grid">
+            <div>
+                <h2>Contact</h2>
+                <p>Această secțiune poate fi adaptată cu datele echipei sau ale coordonatorului de proiect.</p>
+                <p>Pentru prezentarea la curs, puteți include aici adresa de e-mail, pagina de LinkedIn sau alte modalități de contact.</p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Formular demonstrativ - nu trimite date reale.');">
+                <div class="form-group">
+                    <label for="name">Nume</label>
+                    <input type="text" id="name" placeholder="Numele tău">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="adresa@exemplu.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mesaj</label>
+                    <textarea id="message" rows="4" placeholder="Mesajul tău"></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-full">Trimite mesaj</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p>© 2025 EduMaster - Platformă demonstrativă de cursuri. Proiect pentru master.</p>
+        <p class="footer-note">Acest site este static și nu procesează date reale. Poate fi adaptat ușor pentru nevoile proiectului.</p>
+    </div>
+</footer>
+
+<div id="courseModal" class="modal hidden">
+    <div class="modal-content">
+        <button class="modal-close" id="modalCloseBtn">&times;</button>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-meta" id="modalMeta"></p>
+        <p id="modalDescription"></p>
+        <h3>Structura cursului</h3>
+        <ul id="modalOutline"></ul>
+    </div>
+</div>
+
+<div id="modalBackdrop" class="modal-backdrop hidden"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
